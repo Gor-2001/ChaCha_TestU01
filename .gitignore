@@ -49,3 +49,21 @@ Makefile
 *.bak
 *.old
 *~
+
+# Build system
+build/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+
+# Python
+__pycache__/
+*.pyc
+
+# Results
+results/*.csv
+
+# VSCode / IDE
+.vscode/
+.idea/
