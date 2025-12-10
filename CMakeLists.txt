@@ -4,9 +4,7 @@ project(chacha_prng_bench C)
 set(CMAKE_C_STANDARD 11)
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -Wextra -O3 -march=native")
 
-# Path to TestU01
-set(TESTU01_LIB_DIR "/home/vboxuser/TestU01/lib")
-include_directories("/home/vboxuser/TestU01/include")
+link_directories(/usr/local/lib)
 
 add_executable(rng_bench
     main.c
@@ -19,9 +17,10 @@ add_executable(rng_bench
     chacha/bad_prng.c
 )
 
+# 3. Link the library files by their base name, as they are now in a path CMake knows
 target_link_libraries(rng_bench
-    ${TESTU01_LIB_DIR}/libtestu01.a
-    ${TESTU01_LIB_DIR}/libprobdist.a
-    ${TESTU01_LIB_DIR}/libmylib.a
+    testu01
+    probdist
+    mylib
     m
 )
