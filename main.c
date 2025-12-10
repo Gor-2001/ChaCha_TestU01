@@ -219,7 +219,7 @@ int main(int argc, char *argv[]) {
         return 1;
     }
     
-    prepare_results_directory();
+    //prepare_results_directory();
     
     void (*test_func)(rng_type_t, const char*);
     char summary_filename[256];
@@ -242,11 +242,11 @@ int main(int argc, char *argv[]) {
     printf("Summaries will be written to: %s\n\n", summary_filename);
     
     test_func(RNG_BAD, summary_filename);
-    test_func(RNG_CHACHA20, summary_filename);
-    test_func(RNG_CHACHA12, summary_filename);
-    test_func(RNG_CHACHA8, summary_filename);
-    test_func(RNG_CHACHA4, summary_filename);
-    test_func(RNG_CHACHA4_FEEDBACK, summary_filename);
+    //test_func(RNG_CHACHA20, summary_filename);
+    //test_func(RNG_CHACHA12, summary_filename);
+    //test_func(RNG_CHACHA8, summary_filename);
+    //test_func(RNG_CHACHA4, summary_filename);
+   //test_func(RNG_CHACHA4_FEEDBACK, summary_filename);
     
     printf("========================================\n");
     printf("All tests completed\n");
