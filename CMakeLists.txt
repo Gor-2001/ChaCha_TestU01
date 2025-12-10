@@ -9,16 +9,14 @@ set(TESTU01_LIB_DIR "/home/vboxuser/TestU01/lib")
 include_directories("/home/vboxuser/TestU01/include")
 
 add_executable(rng_bench
-    src/main.c
-    src/prng/pcg.c
-    src/prng/lcg.c
-    src/chacha/chacha_core.c
-    src/chacha/chacha20.c
-    src/chacha/chacha12.c
-    src/chacha/chacha8.c
-    src/chacha/chacha4.c
-    src/chacha/chacha4_feedback.c
-    src/tests/testu01_wrapper.c
+    main.c
+    chacha/chacha_core.c
+    chacha/chacha20.c
+    chacha/chacha12.c
+    chacha/chacha8.c
+    chacha/chacha4.c
+    chacha/chacha4_feedback.c
+    chacha/bad_prng.c
 )
 
 target_link_libraries(rng_bench
