@@ -242,11 +242,11 @@ int main(int argc, char *argv[]) {
     printf("Summaries will be written to: %s\n\n", summary_filename);
     
     test_func(RNG_BAD, summary_filename);
-    //test_func(RNG_CHACHA20, summary_filename);
-    //test_func(RNG_CHACHA12, summary_filename);
-    //test_func(RNG_CHACHA8, summary_filename);
-    //test_func(RNG_CHACHA4, summary_filename);
-    //test_func(RNG_CHACHA4_FEEDBACK, summary_filename);
+    test_func(RNG_CHACHA20, summary_filename);
+    test_func(RNG_CHACHA12, summary_filename);
+    test_func(RNG_CHACHA8, summary_filename);
+    test_func(RNG_CHACHA4, summary_filename);
+    test_func(RNG_CHACHA4_FEEDBACK, summary_filename);
     
     printf("========================================\n");
     printf("All tests completed\n");
