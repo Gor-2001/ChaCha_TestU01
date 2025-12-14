@@ -19,6 +19,7 @@ typedef enum {
     RNG_CHACHA8,
     RNG_CHACHA4,
     RNG_CHACHA4_FEEDBACK,
+    RNG_CHACHA2_FEEDBACK,
     RNG_BAD
 } rng_type_t;
 
@@ -31,6 +32,7 @@ static uint32_t current_rng_next32(void) {
         case RNG_CHACHA8: return chacha8_next32();
         case RNG_CHACHA4: return chacha4_next32();
         case RNG_CHACHA4_FEEDBACK: return chacha4_feedback_next32();
+        case RNG_CHACHA2_FEEDBACK: return chacha2_feedback_next32();
         case RNG_BAD: return bad_prng_next32();
         default: return 0;
     }
@@ -43,6 +45,7 @@ static void seed_current_rng(uint64_t seed) {
         case RNG_CHACHA8: chacha8_seed(seed); break;
         case RNG_CHACHA4: chacha4_seed(seed); break;
         case RNG_CHACHA4_FEEDBACK: chacha4_feedback_seed(seed); break;
+        case RNG_CHACHA2_FEEDBACK: chacha2_feedback_seed(seed); break;
         case RNG_BAD: bad_prng_seed(seed); break;
     }
 }
@@ -54,6 +57,7 @@ static const char* rng_name(rng_type_t type) {
         case RNG_CHACHA8: return "ChaCha8";
         case RNG_CHACHA4: return "ChaCha4";
         case RNG_CHACHA4_FEEDBACK: return "ChaCha4-Feedback";
+        case RNG_CHACHA2_FEEDBACK: return "ChaCha2-Feedback";
         case RNG_BAD: return "BadPRNG";
         default: return "Unknown";
     }
@@ -242,11 +246,12 @@ int main(int argc, char *argv[]) {
     printf("Summaries will be written to: %s\n\n", summary_filename);
     
     //test_func(RNG_BAD, summary_filename);
-    test_func(RNG_CHACHA20, summary_filename);
-    test_func(RNG_CHACHA12, summary_filename);
-    test_func(RNG_CHACHA8, summary_filename);
-    test_func(RNG_CHACHA4, summary_filename);
-    test_func(RNG_CHACHA4_FEEDBACK, summary_filename);
+    //test_func(RNG_CHACHA20, summary_filename);
+    //test_func(RNG_CHACHA12, summary_filename);
+    //test_func(RNG_CHACHA8, summary_filename);
+    //test_func(RNG_CHACHA4, summary_filename);
+    //test_func(RNG_CHACHA4_FEEDBACK, summary_filename);
+    test_func(RNG_CHACHA2_FEEDBACK, summary_filename);
     
     printf("========================================\n");
     printf("All tests completed\n");

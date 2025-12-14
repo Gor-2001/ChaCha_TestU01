@@ -14,6 +14,7 @@ add_executable(rng_bench
     chacha/chacha8.c
     chacha/chacha4.c
     chacha/chacha4_feedback.c
+    chacha/chacha2_feedback.c
     chacha/bad_prng.c
 )
 

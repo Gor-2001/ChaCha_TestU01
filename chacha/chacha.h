@@ -25,6 +25,10 @@ void chacha4_feedback_seed(uint64_t seed);
 uint32_t chacha4_feedback_next32(void);
 uint64_t chacha4_feedback_next64(void);
 
+void chacha2_feedback_seed(uint64_t seed);
+uint32_t chacha2_feedback_next32(void);
+uint64_t chacha2_feedback_next64(void);
+
 void bad_prng_seed(uint64_t seed);
 uint32_t bad_prng_next32(void);
 uint64_t bad_prng_next64(void);
