@@ -62,3 +62,12 @@
 
 
 
+========= Summary results of BigCrush =========
+
+ Version:          TestU01 1.2.3
+ Generator:        ChaCha2-Feedback
+ Number of statistics:  160
+ Total CPU time:   02:12:24.39
+
+ All tests were passed
+
